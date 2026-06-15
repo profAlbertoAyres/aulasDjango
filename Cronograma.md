@@ -1,9 +1,3 @@
-# Plano de Curso e Cronograma Semestral: Programação Web com Django
-
-Este documento apresenta a proposta pedagógica e o cronograma detalhado para a disciplina de **Programação Web**, estruturada sob medida para a realidade de alunos do Ensino Médio Técnico em Informática. O plano prioriza a progressão gradual, a repetição de conceitos-chave e o foco 100% prático por meio do desenvolvimento guiado do sistema de controle de treinos (**PersonalPro**).
-
----
-
 ## 1. Visão Geral do Semestre
 
 ### Objetivos
