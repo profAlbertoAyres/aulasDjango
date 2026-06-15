@@ -1,168 +1,187 @@
-# Cronograma Semestral – Programação Web (Django)
-**Curso:** Técnico em Informática Integrado ao Ensino Médio (3º Ano)  
-**Carga horária:** 80 horas (40 aulas de 2h)  
-**Professor(a):** [Seu Nome]
+# Plano de Curso e Cronograma Semestral: Programação Web com Django
+
+Este documento apresenta a proposta pedagógica e o cronograma detalhado para a disciplina de **Programação Web**, estruturada sob medida para a realidade de alunos do Ensino Médio Técnico em Informática. O plano prioriza a progressão gradual, a repetição de conceitos-chave e o foco 100% prático por meio do desenvolvimento guiado do sistema de controle de treinos (**PersonalPro**).
 
 ---
 
 ## 1. Visão Geral do Semestre
 
-**Objetivo Geral:** Capacitar o aluno a desenvolver uma aplicação web full‑stack funcional utilizando Django, aplicando arquitetura MVT, sistema de templates, ORM e CRUD. No 4º bimestre, os alunos aplicarão esses conhecimentos no desenvolvimento de um **projeto integrador em grupo** com tema diverso.
+### Objetivos
+* **Geral:** Capacitar o estudante a planejar, codificar e implantar uma aplicação web funcional com arquitetura baseada em framework, utilizando o ecossistema Django, persistência de dados em SQLite e interface responsiva.
+* **Específicos:** Compreender o fluxo de requisição e resposta na arquitetura MVT; manipular dados relacionais via ORM; criar interfaces dinâmicas usando herança de templates; e gerenciar o código-fonte profissionalmente com Git/GitHub.
 
-**Competências:**
-- Compreender a arquitetura e o fluxo de um framework web.
-- Desenvolver o backend com Django.
-- Modelar dados e relacionamentos (Models).
-- Integrar frontend (HTML5, CSS3, Bootstrap) ao backend.
-- Versionar código com Git e GitHub.
-- Trabalhar em equipe aplicando metodologias ágeis simplificadas.
+### Competências
+* Desenvolver aplicações web dinâmicas integrando camadas de lógica, apresentação e persistência.
+* Utilizar frameworks estruturados para otimização do processo de desenvolvimento de software.
+* Identificar e mitigar erros de sintaxe, lógica e configuração em ambientes de desenvolvimento web.
 
-**Habilidades:**
-- Criar projetos e apps Django.
-- Mapear URLs e criar views.
-- Construir templates com herança, tags e arquivos estáticos.
-- Definir models e relacionamentos (ForeignKey).
-- Utilizar o Django Admin e o ORM básico.
-- Implementar CRUD completo.
-- Versionar e colaborar via GitHub.
+### Habilidades
+* Configurar ambientes virtuais Python e instalar dependências via terminal.
+* Mapear tabelas de bancos de dados por meio de classes (*Models*) e gerenciar o ciclo de vida com *Migrations*.
+* Codificar visualizações (*Views*) capazes de processar requisições HTTP e realizar operações de CRUD no banco de dados.
+* Construir páginas web dinâmicas reutilizando componentes e layouts via *Django Template Language* (DTL).
 
 ---
 
-## 2. Cronograma do 3º Bimestre (Teoria e Fundamentos)
+## 2. Cronograma do 3º Bimestre (Foco: Estrutura, MVT e Front-end no Django)
 
-| Aula | Data | Tipo | CH | Conteúdo | Objetivos | Atividade Prática (Laboratório) |
-|:---:|:---:|:---:|:---:|---|----|---|
-| **0** | 25/07 (Sáb) | Med. Tec. | 2h | **Aula Inaugural** – Vídeos acessíveis: O que é framework? Apresentação do Django. Acessibilidade na web. | Conhecer o conceito de framework e o Django. Sensibilizar para a web acessível. | Questionário online sobre os vídeos (legendados e com intérprete de Libras). |
-| **1** | 27/07 (Seg) | Presencial | 2h | **Ambiente e “Olá, Mundo!”** – venv, instalação do Django, criação do primeiro projeto. | Configurar o ambiente e rodar o servidor de desenvolvimento. | Setup guiado: todos criam o projeto `meu_site` e executam o servidor. |
-| **2** | 28/07 (Ter) | Presencial | 2h | **Projeto vs Aplicação** – Estrutura de projeto, conceito de app, `manage.py startapp`, `views.py`, `HttpResponse`. | Diferenciar projeto e app; criar e registrar uma app; criar a primeira view. | Criar app `paginas` com view `home` retornando “Bem‑vindo!”. Projeto `controle_treinos` é criado para exemplos. |
-| **3** | 03/08 (Seg) | Presencial | 2h | **URLs e Views** – `urls.py`, `path()`, mapeamento URL→View, parâmetros na URL. | Compreender roteamento; criar views com parâmetros. | View `saudacao` que recebe um nome pela URL e retorna um título HTML. |
-| **4** | 04/08 (Ter) | Presencial | 2h | **Introdução aos Templates** – Separando lógica e apresentação, `render()`, contexto `{{ variavel }}`. | Renderizar templates e passar dados da view para o HTML. | View `dados_aluno` que exibe informações em tabela HTML usando template. |
-| **5** | 10/08 (Seg) | Presencial | 2h | **Template Tags** – `{% if %}`, `{% for %}`, contexto com listas. | Criar templates dinâmicos com condicionais e loops. | Lista de exercícios exibida com `{% for %}` e mensagem condicional. |
-| **6** | 11/08 (Ter) | Presencial | 2h | **Herança de Templates** – `{% block %}`, `{% extends %}`, estrutura base. | Reutilizar código HTML; criar layout padrão. | Construir `base.html` com blocos e página `sobre.html` que estende. |
-| **7** | 17/08 (Seg) | Presencial | 2h | **Arquivos Estáticos** – `STATIC_URL`, `{% static %}`, CSS customizado. | Servir arquivos estáticos e estilizar páginas. | Criar `styles.css` e vinculá‑lo; exibir imagem estática. |
-| **8** | 18/08 (Ter) | Presencial | 2h | **Bootstrap no Django** – Navbar, Grid, tabelas, botões, atributos de acessibilidade. | Criar interfaces profissionais e acessíveis rapidamente. | Converter página de alunos em layout com card e tabela Bootstrap. |
-| **9** | 24/08 (Seg) | Presencial | 2h | **Revisão e Fixação** | Consolidar fluxo URL→View→Template; sanar dúvidas. | Exercício integrado: página “Lista de Tarefas” completa. |
-| **10**| 25/08 (Ter) | Presencial | 2h | **Git e GitHub com Django** – `.gitignore`, `init`, `commit`, `push`. | Versionar o projeto corretamente. | Criação do `.gitignore` padrão Django; primeiro commit e push do projeto base. |
-| **–** | **01/08 (Sáb)** | Sáb. Letivo | 2h | **AMT‑1** – “Configurando meu Ambiente” | Tutorial em PDF/vídeo mostrando setup até o “Hello, World!”. | Entrega via Google Sala de Aula. |
-| **11** | 31/08 (Seg) | Presencial | 2h | **Models: a planta da casa** – Models, ORM, tipos de campos, criação do model `Aluno`. | Entender models e criar o primeiro. | Criar model `Aluno` com `nome`, `email`, `data_nascimento`. |
-| **12** | 01/09 (Ter) | Presencial | 2h | **Migrations e Django Admin** – `makemigrations`, `migrate`, registro no admin, superusuário. | Sincronizar banco e usar o Admin. | Executar migrations; registrar `Aluno`; cadastrar 3 alunos via Admin. |
-| **13** | 08/09 (Ter) | Presencial | 2h | **ORM Básico e ForeignKey** – Shell do Django, CRUD via ORM, relacionamento 1:N. | Manipular dados sem SQL; implementar chave estrangeira. | Criar model `Exercicio` com FK para `Aluno`; testar via Shell. |
-| **–** | **12/09 (Sáb)** | Sáb. Letivo | 2h | **1ª AVALIAÇÃO** (prática assíncrona) | Avaliar setup, URLs, views, templates, herança, Bootstrap. | App `biblioteca`: listar livros em tabela Bootstrap herdando de `base.html`. |
-| **14** | 14/09 (Seg) | Presencial | 2h | **Listando dados do banco nos templates** – `Model.objects.all()`, QuerySet no contexto, iteração com `{% for %}`. | Unir View, Template e Model; listar dados reais. | View `lista_alunos` que exibe alunos em tabela Bootstrap. |
-| **15** | 15/09 (Ter) | Presencial | 2h | **Introdução ao CRUD** – As quatro operações; fluxo completo; planejamento de rotas. | Compreender CRUD e planejar URLs. | Mapa de URLs para CRUD de `Exercicio` desenhado no quadro. |
-| **16**| 21/09 (Seg) | Presencial | 2h | **CRUD: Create** – Formulário HTML com POST, CSRF, `request.POST`, `create()`, `redirect`. | Criar interface e lógica para inserir registros. | Template `form_exercicio.html` e view `criar_exercicio` (GET/POST). |
-| **17**| 22/09 (Ter) | Presencial | 2h | **CRUD: Read (Detalhes) e Update** – `get_object_or_404`, edição com `instance`. | Exibir detalhes e editar registros. | View/template `detalhes_exercicio` e view de edição reutilizando formulário. |
-| **18**| 28/09 (Seg) | Presencial | 2h | **CRUD: Delete** – View de confirmação, template com POST, `Model.delete()`. | Implementar exclusão segura. | View `deletar_exercicio` com página de confirmação. |
-| **–** | **19/09 (Sáb)** | Sáb. Letivo | 2h | **AMT‑2** – “CRUD de Alunos” | Implementar CRUD completo para `Aluno` (réplica do de Exercicio). | Entrega via GitHub. |
-| **19**| 29/09 (Ter) | Presencial | 2h | **Plantão de dúvidas e refatoração** | Sanar dúvidas; consolidar CRUD. | Refatoração coletiva dos pontos de maior dificuldade. |
-| **20**| 05/10 (Seg) | Presencial | 2h | **2ª AVALIAÇÃO PRESENCIAL** | Models, Migrations, Admin e CRUD. | Criar model `Categoria` e implementar seu CRUD completo. |
-| **21**| 06/10 (Ter) | Presencial | 2h | **Devolutiva da avaliação** | Corrigir prova; feedback do bimestre. | Resolução comentada da avaliação. |
+O objetivo deste bimestre é que o estudante domine a estrutura de pastas do Django e consiga criar a interface do sistema integrando o Bootstrap. Ao fim deste período, todas as telas do projeto estarão criadas e navegáveis, usando dados estáticos.
 
-**Feriado/Recesso:** 13/10  
-**Semana Nacional de Ciência e Tecnologia:** 19 e 20/10 (aulas temáticas – sem conteúdo da disciplina)
+| Aula | C.H. | Conteúdo | Objetivos | Atividade Prática | Evolução do Projeto | Avaliação |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **01** | 2h | Apresentação da Disciplina e Ambiente | Compreender o escopo do semestre e a proposta do Projeto Integrador. | Instalação do Python, VS Code e extensões recomendadas. | Instalação das ferramentas no laboratório. | Diagnóstica |
+| **02** | 2h | Conceito de Framework e Virtualenv | Compreender a utilidade de um framework e isolar dependências com `venv`. | Criação e ativação do ambiente virtual via terminal. | Criação da pasta raiz do projeto de treinos. | - |
+| **03** | 2h | Criando o Projeto Django | Compreender os comandos de inicialização e a diferença entre Projeto e App. | Execução do `django-admin startproject` e análise do `manage.py`. | Criação da estrutura base do projeto do sistema. | Formativa |
+| **04** | 2h | Criando a Primeira Aplicação | Criar a primeira aplicação interna e registrá-la em `settings.py`. | Execução do `startapp core` e registro no projeto principal. | Criação do app `core` (responsável pelo fluxo inicial). | - |
+| **05** | 2h | Fluxo de Request/Response: URLs | Compreender como o Django mapeia rotas HTTP para funções. | Configuração do arquivo `urls.py` do projeto e do app. | Criação da rota inicial (`/`) para a página de boas-vindas. | - |
+| **06** | 2h | Fluxo de Request/Response: Views | Criar funções que recebem requisições e retornam respostas simples (`HttpResponse`). | Escrita de funções baseadas em funções (FBVs) no arquivo `views.py`. | Exibição de uma mensagem "Bem-vindo ao Sistema de Treinos" via código. | Formativa |
+| **07** | 2h | Introdução ao MVT (Templates) | Compreender onde e como armazenar arquivos HTML renderizados pelo Django. | Criação da pasta `templates/` e renderização de HTML usando a função `render()`. | Substituição do texto simples por uma página HTML estruturada de Home. | - |
+| **08** | 2h | Git e GitHub no Django | Aplicar controle de versão ignorando arquivos desnecessários (`.gitignore`). | Inicialização do repositório, escrita do `.gitignore` e primeiro `push` para o GitHub. | Publicação do esqueleto inicial do sistema no GitHub de cada aluno. | **Início da AMT 1** |
+| **09** | 2h | Integração com Bootstrap | Acoplar bibliotecas CSS externas aos templates gerenciados pelo Django. | Download do Bootstrap e estilização inicial da página home. | Criação de um layout básico visual para a tela inicial do sistema. | - |
+| **10** | 2h | Arquivos Estáticos (`staticfiles`) | Configurar e carregar arquivos CSS, imagens e JS customizados. | Configuração de `STATIC_URL` e uso da tag `{% load static %}`. | Inclusão de um arquivo `estilos.css` próprio e logotipo no sistema. | Formativa |
+| **11** | 2h | DRY e Herança de Templates | Entender o conceito *Don't Repeat Yourself* e o funcionamento de blocos. | Criação do template base (`base.html`) com `{% block content %}`. | Isolamento do topo (navbar) e do rodapé que serão fixos no sistema. | - |
+| **12** | 2h | Construindo as Telas: Aluno | Aplicar a herança de templates para criar novas páginas com esforço reduzido. | Criação da tela de listagem de alunos utilizando tabelas estáticas do Bootstrap. | Extensão do `base.html` para criar a página `/alunos/`. | **Avaliação 1 (Prática)** |
+| **13** | 2h | Construindo as Telas: Exercício | Replicar a arquitetura de herança para novas entidades do escopo. | Criação da tela de listagem de exercícios (ex: Supino, Agachamento). | Extensão do `base.html` para criar a página `/exercicios/`. | - |
+| **14** | 2h | Construindo as Telas: Treino | Praticar rotas, views e herança in conjunto para fechar o ciclo visual. | Criação da página visual com os cartões (*cards*) dos treinos dos alunos. | Extensão do `base.html` para criar a página `/treinos/`. | - |
+| **15** | 2h | Template Tags e Navegação | Utilizar a tag `{% url %}` para interconectar as páginas criadas sem links fixos. | Alteração das tags `href` do menu flutuante utilizando as rotas nomeadas. | Menu de navegação do sistema funcionando de forma integrada. | - |
+| **16** | 2h | Consolidação do Layout do Projeto | Revisar a fidelidade visual e a estrutura de diretórios criada até o momento. | Ajustes finos no CSS customizado e tratamento de links quebrados. | Sistema estático de controle de treinos completamente navegável. | **Entrega da AMT 1** |
+| **17** | 2h | Revisão Prática Geral | Solucionar dúvidas acumuladas sobre MVT e links dinâmicos. | Exercício rápido de criação de uma rota extra (ex: página "Sobre o sistema"). | Fechamento do ciclo front-end do projeto. | Formativa |
+| **18** | 2h | Avaliação Bimestral Prática | Verificar a autonomia do estudante na montagem de um fluxo MVT estático completo. | Desenvolvimento individual em laboratório a partir de um conjunto de requisitos. | Replicação das competências em um cenário similar. | **Avaliação 2 (Prática)** |
+| **19** | 2h | Feedback e Ajustes no Repositório | Corrigir problemas nos códigos e atualizar os repositórios para o próximo bimestre. | Correção guiada da avaliação e sincronização dos códigos com o GitHub. | Garantia de que todos os alunos tenham a base pronta para os Models. | Formativa |
+| **20** | 2h | Fechamento do Bimestre | Organização das notas e nivelamento técnico para a introdução ao banco de dados. | Organização de arquivos e documentação básica do projeto (Readme). | Repositório limpo e pronto para o 4º bimestre. | Formativa |
 
 ---
 
-## 3. Avaliações do 3º Bimestre (Valor: 10,0)
+## 3. Avaliações do 3º Bimestre
 
-- **Avaliação 1 (12/09, assíncrona) – 3,0 pts**  
-  *Objetivo:* Avaliar setup, URLs, views, templates com herança e Bootstrap.  
-  *Descrição:* Criar app `biblioteca`; view que exiba lista de livros em tabela Bootstrap, herdando de `base.html`.  
-  *Critérios:* Criação/registro da app (0,5); URL correta (0,5); view com contexto (1,0); template com herança e `{% for %}` (1,0).  
-  *Entrega:* link do repositório GitHub.
+### Avaliação 1: Construção da Infraestrutura e Primeira Rota Dinâmica
+* **Objetivo:** Avaliar se o aluno consegue criar o ambiente virtual, iniciar um projeto/app Django do zero e criar uma rota renderizando um HTML próprio.
+* **Critérios de Avaliação:**
+  * Configuração correta do ambiente e registro do app (20%)
+  * Configuração sem erros das URLs do projeto e do app (30%)
+  * Escrita correta da view baseada em função (20%)
+  * Renderização do arquivo HTML aplicando tags estruturais corretas (30%)
+* **Forma de Entrega:** Verificação presencial no computador do laboratório e avaliação do código-fonte produzido em tempo real.
+* **Valor Sugerido:** 30 Pontos.
 
-- **Avaliação 2 (05/10, presencial) – 3,5 pts**  
-  *Objetivo:* Models, migrações, Admin e CRUD.  
-  *Descrição:* Criar model `Categoria` (campo `nome`) e implementar CRUD completo com templates herdados e Bootstrap.  
-  *Critérios:* Model/migrações (0,5); listagem (1,0); criação (1,0); detalhes/edição (0,5); exclusão (0,5).  
-  *Entrega:* código funcionando no laboratório.
+### Avaliação 2: Interface Completa do Projeto Integrador com Herança de Templates
+* **Objetivo:** Avaliar a capacidade de estruturar o front-end do sistema dentro do Django, fazendo uso de herança de templates e arquivos estáticos (Bootstrap).
+* **Critérios de Avaliação:**
+  * Criação eficiente do arquivo `base.html` e uso correto das tags `{% block %}` (30%)
+  * Integração funcional do Bootstrap e de arquivos CSS locais via `{% load static %}` (20%)
+  * Criação das 3 telas estáticas solicitadas: Alunos, Exercícios e Treinos (30%)
+  * Menu de navegação funcional utilizando o mapeamento dinâmico de `{% url %}` (20%)
+* **Forma de Entrega:** Projeto executável em laboratório + envio do link do repositório GitHub para correção do histórico de commits.
+* **Valor Sugerido:** 50 Pontos.
 
-- **AMTs (total 3,5 pts):**
-  - **AMT‑0 (25/07)** – Questionário sobre vídeos da aula inaugural (1,0 pt bônus).
-  - **AMT‑1 (01/08)** – Tutorial “Configurando meu Ambiente” (1,5 pts).
-  - **AMT‑2 (19/09)** – “CRUD de Alunos” completo (2,0 pts).
-
----
-
-## 4. Cronograma do 4º Bimestre (Projeto Integrador em Grupo)
-
-**Foco:** Os alunos, organizados em grupos, desenvolverão uma aplicação web completa com tema diverso. O professor orienta cada etapa, garantindo a aplicação dos conteúdos vistos no 3º bimestre.
-
-| Aula | Data | Tipo | CH | Conteúdo / Atividade | Objetivos | Entregáveis / Evolução do Projeto |
-|:---:|:---:|:---:|:---:|---|---|:---|
-| **–** | **31/10 (Sáb)** | Sáb. Letivo | 2h | **AMT‑3 – “Pré‑projeto”** | Definir tema, escopo e entidades do projeto. | Documento com tema, descrição breve e lista de entidades/modelos previstos. |
-| **22**| 26/10 (Seg) | Presencial | 2h | **Formação das equipes e kick‑off** – Escolha de temas, definição de escopo, criação do repositório no GitHub. | Organizar grupos, definir regras de colaboração e iniciar o versionamento. | Repositório do grupo criado; `README.md` inicial com tema e integrantes. |
-| **23**| 27/10 (Ter) | Presencial | 2h | **Modelagem de dados** – Der para cada projeto, models e relacionamentos. | Traduzir o escopo em models Django (com ForeignKey). | Models definidos e migrações iniciais executadas. |
-| **24**| 03/11 (Ter) | Presencial | 2h | **Admin e população de dados** – Registro dos models no Admin, criação de superusuário, inserção de dados de teste. | Familiarizar‑se com os dados via Admin. | Admin configurado; dados de teste inseridos. |
-| **25**| 14/11 (Sáb) | Presencial | 2h | **CRUD – parte 1** – Implementação das operações de **listagem** e **criação** para a entidade principal do projeto. | Aplicar CRUD no contexto do tema do grupo. | Listagem e formulário de criação funcionais. |
-| **–** | **07/11 (Sáb)** | Sáb. Letivo | 2h | **AMT‑4 – “Checkpoint de progresso”** | Relatar o andamento do projeto. | Relatório simples (PDF) com capturas de tela comentadas mostrando o CRUD parcial. |
-| **–** | **09 e 10/11** | JICAS | – | *Semana temática – sem conteúdo regular* | – | – |
-| **26**| 16/11 (Seg) | Presencial | 2h | **CRUD – parte 2** – Detalhes, edição e exclusão. | Completar o CRUD da entidade principal. | CRUD completo para a entidade principal. |
-| **27**| 17/11 (Ter) | Presencial | 2h | **Funcionalidades extras** – Filtros, dashboard simples, página inicial com contagens. | Enriquecer a aplicação com recursos de navegação e visualização. | Página inicial com cards de resumo; filtro por relacionamento (ex: listar itens por categoria). |
-| **28**| 23/11 (Seg) | Presencial | 2h | **1ª AVALIAÇÃO DO 4º BIMESTRE** (individual prática) | Avaliar capacidade de implementar funcionalidade em contexto novo. | Avaliação prática em laboratório (ver descrição abaixo). |
-| **29**| 24/11 (Ter) | Presencial | 2h | **Refinamento e acessibilidade** – Revisão de templates, Bootstrap, contraste, atributos `aria`, legendas. | Polir a interface e garantir requisitos mínimos de acessibilidade. | Sistema com design consistente e elementos acessíveis. |
-| **30**| (a definir) | Síncrono remoto | 2h | **Preparação para apresentação final** – Orientações sobre o vídeo de demonstração. | Alinhar expectativas para a entrega final. | Roteiro do vídeo e últimos ajustes. |
-| **–** | (a definir) | – | – | **AVALIAÇÃO FINAL (AMT‑5)** – Vídeo de demonstração do projeto | Apresentar o sistema finalizado. | Vídeo (3‑5 min) com legendas mostrando funcionalidades e trecho de código. |
+### Atividade Mediada por Tecnologia (AMT 1): Portfólio Digital e Registro de Progresso
+* **Objetivo:** Estimular o hábito de versionamento contínuo e documentação, fixando os conceitos da arquitetura de diretórios do Django.
+* **Critérios de Avaliação:**
+  * Histórico de commits organizado e uso correto do arquivo `.gitignore` (40%)
+  * Criação de um arquivo `README.md` simples contendo o nome do projeto, tecnologias utilizadas e capturas de tela (*printscreens*) das telas criadas com pequenas legendas explicativas sobre o fluxo MVT (60%)
+* **Forma de Entrega:** Link do repositório público do GitHub postado na plataforma de aprendizagem (AVA) da instituição.
+* **Valor Sugerido:** 20 Pontos.
 
 ---
 
-## 5. Avaliações do 4º Bimestre (Valor: 10,0)
+## 4. Cronograma do 4º Bimestre (Foco: Models, ORM e CRUD Completo)
 
-- **Avaliação 1 (23/11, presencial) – 3,5 pts**  
-  *Objetivo:* Aferir a capacidade individual de implementar CRUD com relacionamento em situação nova.  
-  *Descrição:* Cada aluno receberá a especificação de um mini‑projeto (ex.: “Gerenciador de Playlists”) e deverá criar models, migrações e CRUD completo para duas entidades relacionadas.  
-  *Critérios:* Models e relacionamentos (1,0); CRUD funcional (2,0); templates com herança e Bootstrap (0,5).  
-  *Entrega:* código funcionando no laboratório.
+Este bimestre introduz a camada de dados. O estudante aprenderá como salvar informações de forma persistente e criar as operações de inclusão, leitura, atualização e exclusão (CRUD) para gerenciar o sistema de treinos de forma dinâmica.
 
-- **Avaliação 2 (AMT‑5) – 3,5 pts**  
-  *Objetivo:* Demonstrar o projeto integrador finalizado, praticar comunicação e documentação.  
-  *Descrição:* Vídeo de 3‑5 min apresentando o sistema do grupo: funcionalidades, decisões de design e um trecho de código relevante. O vídeo deve conter legendas (revisadas, não apenas automáticas).  
-  *Critérios:* Demonstração completa das funcionalidades (2,0); clareza e organização (1,0); análise do código (0,5).  
-  *Entrega:* link do vídeo (YouTube não listado, Google Drive) + link do repositório GitHub do grupo.
-
-- **AMTs (total 3,0 pts):**
-  - **AMT‑3 (31/10)** – Documento de pré‑projeto (tema, escopo, entidades) – 1,5 pts.
-  - **AMT‑4 (07/11)** – Relatório de progresso com capturas de tela comentadas – 1,5 pts.
-
----
-
-## 6. Diretrizes de Acessibilidade
-
-Para garantir a plena participação da aluna com deficiência auditiva:
-- **Materiais:** Vídeos com janela de Libras ou legendas revisadas; slides visuais e textos objetivos.
-- **Sala de aula:** Professor fala de frente para a turma; instruções verbais sempre acompanhadas de registro escrito.
-- **Atividades:** Entregas que envolvem vídeo (AMT‑5) devem incluir legendas, promovendo um ambiente inclusivo.
-- **Avaliações:** Enunciados com frases curtas e vocabulário técnico previamente definido; tempo adicional se necessário.
-- **Referências:** Glossário bilíngue de termos técnicos construído com a turma.
+| Aula | C.H. | Conteúdo | Objetivos | Atividade Prática | Evolução do Projeto | Avaliação |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **21** | 2h | Introdução à Camada de Models | Compreender como o Django mapeia classes Python para tabelas SQL via ORM. | Criação do primeiro modelo: classe `Aluno` no arquivo `models.py`. | Definição dos campos Nome, Matrícula e Data de Nascimento do Aluno. | - |
+| **22** | 2h | Migrations (Migrações) | Compreender os comandos `makemigrations` e `migrate` e a alteração do banco SQLite. | Geração dos arquivos de migração e execução para criar a tabela física. | Criação real da tabela de alunos no banco de dados local. | Formativa |
+| **23** | 2h | Django Admin | Habilitar a interface de gerenciamento nativa para inserção de dados de teste. | Criação de um `superuser` e registro do modelo no `admin.py`. | Cadastro manual de 3 alunos de teste pela interface administrativa. | - |
+| **24** | 2h | ORM Básico: Consultas (Read) | Compreender como buscar dados do banco usando `Model.objects.all()`. | Modificação da view de Alunos para buscar registros reais do banco de dados. | Substituição da tabela estática de Alunos por dados dinâmicos da tabela. | Formativa |
+| **25** | 2h | Exibindo Dados no Template | Dominar a estrutura de repetição `{% for %}` para listar os dados buscados pela view. | Escrita do laço no HTML para gerar as linhas da tabela dinamicamente. | Exibição em tela dos alunos inseridos via Django Admin. | **Início da AMT 2** |
+| **26** | 2h | Criando Dados (Create): Forms | Compreender a captura de dados via requisições POST e formulários HTML comuns. | Criação de uma página contendo um formulário HTML estruturado para o Aluno. | Criação da tela `/alunos/novo/` para cadastro de novos atletas. | - |
+| **27** | 2h | Processando o Salvamento | Aprender a receber dados do dicionário `request.POST` e invocar o método `.save()`. | Escrita da lógica de validação básica e salvamento do aluno na view. | Fluxo completo de cadastro de alunos funcionando de ponta a ponta. | Formativa |
+| **28** | 2h | Remoção de Dados (Delete) | Compreender a passagem de parâmetros via URL (IDs) para exclusão de registros. | Configuração de rotas dinâmicas como `<int:id>/deletar/` e chamada do `.delete()`. | Inclusão de um botão "Excluir" em cada linha da tabela de Alunos. | **Avaliação 3 (Prática)** |
+| **29** | 2h | Atualização de Dados (Update) | Combinar a lógica de busca por ID, preenchimento do form e salvamento. | Criação de rota para edição, recuperação do objeto com `get_object_or_404` e re-salvamento. | Inclusão de um botão "Editar" que abre o formulário pré-preenchido. | - |
+| **30** | 2h | Consolidando o CRUD do Aluno | Fixar o ciclo completo do CRUD revisando rotas, views e templates. | Refatoração de caminhos e validação visual de mensagens de sucesso. | CRUD completo da entidade Aluno 100% operacional. | Formativa |
+| **31** | 2h | Model Exercício | Replicar os conhecimentos adquiridos criando a segunda tabela independente do sistema. | Escrita do modelo `Exercicio`, execução de migrations e registro no Admin. | Definição dos campos Nome do Exercício e Grupo Muscular. | - |
+| **32** | 2h | CRUD Rápido do Exercício | Estimular a autonomia aplicando a repetição de padrões para criar telas semelhantes. | Desenvolvimento da listagem, cadastro e exclusão para a entidade Exercício. | CRUD da entidade Exercício finalizado pelos próprios alunos. | Formativa |
+| **33** | 2h | Relacionamentos: ForeignKey | Compreender o conceito de chave estrangeira aplicado ao ORM do Django. | Criação do modelo `Treino` contendo um campo `ForeignKey` apontando para `Aluno`. | Amarração lógica: cada registro de treino agora pertence obrigatoriamente a um aluno. | - |
+| **34** | 2h | Migrations com Relacionamentos | Resolver pendências de migração quando existem tabelas dependentes. | Execução de migrações em lote e testes de inserção via Django Admin. | Banco de dados totalmente estruturado no modelo relacional planejado. | Formativa |
+| **35** | 2h | CRUD de Treinos com Seleção | Renderizar uma caixa de seleção (`<select>`) alimentada dinamicamente com dados de outra tabela. | Busca de todos os alunos no banco para exibir como opções no formulário de treino. | Criação da tela de agendamento/cadastro de treinos vinculados a alunos. | - |
+| **36** | 2h | Ajustes Finais do Sistema | Garantir a coesão visual e funcional de todas as pontas do sistema integrado. | Testes manuais cruzados entre alunos para detectar falhas de integridade. | Aplicação "PersonalPro" completamente estável e preenchida. | **Entrega da AMT 2** |
+| **37** | 2h | Oficina de Dúvidas e Laboratório | Oferecer espaço de mentoria focado para os alunos com atraso nas entregas. | Plantão de correções de bugs individuais nos códigos dos alunos. | Equalização do andamento técnico da turma. | Formativa |
+| **38** | 2h | Avaliação Final Prática | Mensurar a capacidade de estender o sistema implementando uma funcionalidade do zero. | Adição individual de um novo campo ou pequena alteração estrutural sob supervisão. | Comprovação prática das habilidades de manipulação de banco e MVT. | **Avaliação 4 (Prática)** |
+| **39** | 2h | Apresentação dos Projetos | Desenvolver habilidades de comunicação técnica demonstrando o software funcionando. | Demonstração breve da aplicação rodando localmente no laboratório. | Validação social do esforço produtivo do aluno. | Formativa |
+| **40** | 2h | Encerramento e Conselho de Classe | Consolidação de resultados pedagógicos e encerramento das atividades. | Arquivamento dos códigos finais no GitHub e feedback de autoavaliação. | Conclusão do ciclo da disciplina. | Formativa |
 
 ---
 
-## 7. Metodologias Ativas
+## 5. Avaliações do 4º Bimestre
 
-- **Aprendizagem Baseada em Projetos (ABP):** todo o semestre converge para o projeto integrador.
-- **Sala de Aula Invertida:** AMTs preparam o terreno para as aulas presenciais práticas.
-- **Prática Guiada e Demonstração:** professor programa junto nas primeiras aulas de cada tópico.
-- **Refatoração Coletiva:** correção de erros comuns com participação da turma.
-- **Trabalho em Equipe:** 4º bimestre inteiramente colaborativo, com repositórios e responsabilidades compartilhadas.
+### Avaliação 3: Implementação do Primeiro Fluxo de Persistência (Create e Read)
+* **Objetivo:** Avaliar a transição do front-end estático para uma aplicação dinâmica conectada ao banco de dados SQLite.
+* **Critérios de Avaliação:**
+  * Escrita correta do modelo `Aluno` com os tipos de campos adequados (25%)
+  * Execução bem-sucedida das migrações sem corromper o banco (25%)
+  * Construção da View de listagem puxando os dados via ORM (25%)
+  * Renderização dinâmica do laço `{% for %}` no HTML exibindo os dados salvos (25%)
+* **Forma de Entrega:** Execução da rotina ao vivo no computador do laboratório.
+* **Valor Sugerido:** 30 Pontos.
+
+### Avaliação 4: CRUD Completo e Relacionamento de Tabelas (Projeto Integrador)
+* **Objetivo:** Avaliar a entrega final do sistema, focando no funcionamento dos formulários de modificação (Update/Delete) e na integridade do relacionamento ForeignKey.
+* **Critérios de Avaliação:**
+  * Funcionamento correto e seguro da edição e exclusão de registros (30%)
+  * Implementação correta da ForeignKey relacionando Treinos a Alunos (30%)
+  * Renderização dinâmica do componente `<select>` populado com dados do banco (20%)
+  * Ausência de erros de execução internos do Django (Erros 500) durante o uso ordinário (20%)
+* **Forma de Entrega:** Envio do link final do repositório no GitHub acompanhado de uma arguição prática de 3 minutos no laboratório.
+* **Valor Sugerido:** 50 Pontos.
+
+### Atividade Mediada por Tecnologia (AMT 2): Screencast Técnico explicativo
+* **Objetivo:** Avaliar a compreensão do código escrito, mitigando cópias literais e garantindo que o aluno saiba explicar a lógica estruturada.
+* **Critérios de Avaliação:**
+  * Clareza na gravação (áudio e vídeo compreensíveis) (20%)
+  * Demonstração prática do CRUD funcionando no navegador (incluindo inserção e checagem no Admin) (40%)
+  * Explicação sucinta de onde estão localizadas as rotas, a view e o model da funcionalidade demonstrada (40%)
+* **Forma de Entrega:** Gravação de um vídeo de **no máximo 3 minutos** (via ferramentas como Loom ou Clipchamp) com envio do link na plataforma oficial.
+* **Valor Sugerido:** 20 Pontos.
+
+---
+
+## 6. Evolução do Projeto Integrador Aula por Aula (Resumo de Engenharia)
+
+O sistema de gerenciamento de treinos evoluirá conforme os passos lógicos a seguir:
+
+1. **Aulas 01 a 04:** O projeto nasce vazio no terminal (`personalpro`). Configura-se a estrutura interna e cria-se o aplicativo principal `core`.
+2. **Aulas 05 a 07:** O sistema ganha as primeiras rotas. Acessar `/` exibe uma página de boas-vindas simples em HTML puro.
+3. **Aulas 09 a 11:** O visual melhora. Cria-se o arquivo `base.html` que desenha uma barra de navegação superior azul (Bootstrap) que se repetirá por todo o sistema.
+4. **Aulas 12 a 16:** O usuário clica nos links do menu e consegue navegar por páginas estáticas vazias: `/alunos/`, `/exercicios/` e `/treinos/`, povoadas com tabelas simuladas.
+5. **Aulas 21 a 23:** O banco de dados ganha vida. A classe `Aluno` vira uma tabela no SQLite. O professor entra na rota `/admin/` e cadastra os primeiros alunos reais.
+6. **Aulas 24 a 25:** A página `/alunos/` deixa de exibir dados falsos e passa a listar os nomes reais cadastrados no passo anterior.
+7. **Aulas 26 a 30:** Adiciona-se o botão "Cadastrar Aluno". Abre-se um formulário limpo que salva registros na tabela. Em seguida, adicionam-se os botões de "Editar" e "Excluir" em cada linha.
+8. **Aulas 31 a 32:** O mesmo processo do ciclo de Alunos é replicado rapidamente para a tabela de `Exercicio` (Supino, Corrida, Leg Press).
+9. **Aulas 33 a 36:** O ápice do projeto. Cria-se a tabela `Treino`. Ao cadastrar um treino, o sistema exibe uma caixa de seleção contendo a lista de alunos cadastrados dinamicamente, permitindo associar uma rotina de exercícios àquele aluno específico de forma persistente.
+
+---
+
+## 7. Metodologias Ativas Utilizadas
+
+* **Aulas Expositivas Dialogadas Curtas (MÁXIMO 20-30 MIN):** Explicação focada no quadro ou projetor sobre o conceito do dia, abrindo espaço imediato para testes.
+* **Estudo Dirigido com Codificação Guiada (*Live Coding*):** O professor escreve trechos de código em tempo real no projetor, explicando os erros de digitação mais comuns que travam a execução do framework.
+* **Instrução aos Pares (*Peer Instruction*):** Alunos que concluem os desafios diários mais rápido são estimulados a apoiar os colegas que estão enfrentando erros de sintaxe ou configuração nos computadores vizinhos.
+* **Aprendizagem Baseada em Projetos (PBL):** O engajamento é mantido alto porque o aluno percebe o crescimento prático e cumulativo de um sistema real, fugindo de exercícios isolados que não fazem sentido sistêmico.
 
 ---
 
 ## 8. Recursos Didáticos
 
-- Laboratório de informática com Python 3.10+, Git, VS Code.
-- Projetor multimídia para demonstrações.
-- Quadro branco para diagramas e mapas de URL.
-- GitHub (versionamento e entrega).
-- Google Sala de Aula (central de materiais e entregas).
+* **Laboratório de Informática:** Computadores individuais com interpretador Python instalado e editores de código configurados.
+* **Projetor Multimídia (Datashow):** Utilizado pelo docente para demonstração ao vivo da escrita do código e análise dos logs do terminal do Django.
+* **Quadro Branco:** Essencial para desenhar o fluxo de requisições do MVT e ilustrar as relações das tabelas (Chave Estrangeira) de forma visual antes de ir para o código.
+* **Ambiente Virtual de Aprendizagem (AVA/Moodle/Google Classroom):** Centralizador para postagem de links de referência, códigos de exemplo estruturados e espaço de entrega das AMTs.
 
 ---
 
 ## 9. Bibliografia Básica
 
-1. **Documentação Oficial do Django** – [https://docs.djangoproject.com/](https://docs.djangoproject.com/)  
-2. **Tutorial Django Girls (PT‑BR)** – [https://tutorial.djangogirls.org/pt/](https://tutorial.djangogirls.org/pt/)  
-3. **MDN Web Docs – Tutorial Django** – [https://developer.mozilla.org/pt-BR/docs/Learn/Server-side/Django](https://developer.mozilla.org/pt-BR/docs/Learn/Server-side/Django)  
-4. **Cartilha de Acessibilidade na Web (W3C Brasil)** – [https://www.w3c.br/pub/Materiais/PublicacoesW3C/cartilha-w3cbr-acessibilidade-web-fasciculo-I.html](https://www.w3c.br/pub/Materiais/PublicacoesW3C/cartilha-w3cbr-acessibilidade-web-fasciculo-I.html)
-
----
-**Observação:** Este cronograma é um guia vivo. Ajustes podem ser feitos conforme o ritmo da turma, respeitando sempre os objetivos de aprendizagem e a inclusão de todos.
+1. **DOCUMENTAÇÃO OFICIAL DO DJANGO.** *Django Documentation.* Disponível em: <https://docs.djangoproject.com/>.
+2. **BOOTSTRAP TEAM.** *Bootstrap Docs.* Disponível em: <https://getbootstrap.com/>.
+3. **MELO, Alexandre S.** *Desenvolvimento Web com Python e Django.* Editora Novatec, 2021.
